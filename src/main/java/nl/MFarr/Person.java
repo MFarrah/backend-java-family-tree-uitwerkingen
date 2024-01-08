@@ -100,6 +100,43 @@ public class Person {
     public void setPets(List<Pet> pets) {
         this.pets = pets;
     }
+    /*methods*/
+    public void addParent(Person mother, Person father, Person child) {
+        child.setMother(mother);
+        mother.addChildToChildren(mother, child);
+        child.setFather(father);
+        father.addChildToChildren(father, child);
+    }
 
+    public void addChildToChildren(Person parent, Person child) {
+        List<Person> kids = new ArrayList<>();
+        if (parent.getChildren() != null) {
+            for (Person person : parent.getChildren()) {
+                kids.add(person);
+            }
+        }
+        kids.add(child);
+        parent.setChildren(kids);
+    }
+
+    public void addPet(Person person, Pet pet) {
+        List<Pet> pets = new ArrayList<>();
+        if (person.getPets() != null) {
+            pets.addAll(person.getPets());
+        }
+        pets.add(pet);
+        person.setPets(pets);
+    }
+
+    public void addSiblings(Person person, Person sibling) {
+        List<Person> family = new ArrayList<>();
+        if (person.getSiblings() != null) {
+            for (Person people : person.getSiblings()) {
+                family.add(people);
+            }
+        }
+        family.add(sibling);
+        person.setSiblings(family);
+    }
 
 }

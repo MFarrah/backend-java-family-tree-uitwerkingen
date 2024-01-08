@@ -138,5 +138,19 @@ public class Person {
         family.add(sibling);
         person.setSiblings(family);
     }
+    /*grandChildren identifier*/
+    public List<Person> getGrandChildren (Person person) {
+        List<Person> grandChildren = new ArrayList<>();
+        if (person.getChildren() != null) {
+            for (Person children : person.getChildren()) {
+                if (children.getChildren() != null) {
+                    for (Person grandChild : children.getChildren()) {
+                        grandChildren.add(grandChild);
+                    }
+                }
+            }
+        }
+        return grandChildren;
+    }
 
 }

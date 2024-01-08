@@ -12,4 +12,25 @@ public class Pet {
         this.age = age;
         this.species = species;
     }
+    /*getters voor pet attributen*/
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public Person getOwner() {
+        return owner;
+    }
+
+    /*setter voor toewijzing van attribuut aan Person class*/
+    public void setOwner(Person owner) {
+        this.owner = owner;
+    }
 }

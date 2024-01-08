@@ -139,10 +139,10 @@ public class Person {
         person.setSiblings(family);
     }
     /*grandChildren identifier*/
-    public List<Person> getGrandChildren (Person person) {
+    public List<Person> getGrandChildren () {
         List<Person> grandChildren = new ArrayList<>();
-        if (person.getChildren() != null) {
-            for (Person children : person.getChildren()) {
+        if (getChildren() != null) {
+            for (Person children : getChildren()) {
                 if (children.getChildren() != null) {
                     for (Person grandChild : children.getChildren()) {
                         grandChildren.add(grandChild);

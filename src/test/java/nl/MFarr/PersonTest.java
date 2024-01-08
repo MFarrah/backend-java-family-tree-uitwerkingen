@@ -81,17 +81,11 @@ class PersonTest {
         var helma = new Person("Helma", "Bellwinkel", 0, "female");
         var mathilde = new Person("Mathilde", "Bellwinkel", 70, "Female");
         var michael = new Person("Michael", "Farrah Girgis", 38, "male");
-
         // act
         helma.addChildToChildren(helma, mathilde);
         mathilde.addChildToChildren(mathilde, michael);
-
         // assert
-        // Assuming getGrandChildren returns a List<Person>
         List<Person> grandChildren = helma.getGrandChildren();
-
-        // You may need to modify the assertion based on the actual implementation of getGrandChildren
         assertTrue(grandChildren.contains(michael));
     }
-
 }
